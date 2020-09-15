@@ -10,6 +10,8 @@ Tile::Tile(std::string word)
     {
         _width = word.size();
 
+        for(int x = 0; x < _width; x++)
+            _blank +="-"; 
 
     }
 }
@@ -18,15 +20,13 @@ bool Tile::match(Tile& tile)
 {
     if(_word == tile.word())
     {
-        _word = true;
-
-        return true;
+        _matched = true;
+        tile._matched = true;
+       
     }
-    else 
-        return false;
 
-
-
+    return _matched;
+    
 }
 
 std::string Tile::word()

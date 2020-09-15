@@ -13,4 +13,4 @@ Tile.o: Tile.cpp *.h
 	$(CXX) $(CXXFLAGS) -c Tile.cpp -o Tile.o
 
 clean:
-	rm -f *~ a.out *.gch *.o class *.exe
+	rm -f *~ a.out *.gch *.o main *.exe

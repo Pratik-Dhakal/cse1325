@@ -58,7 +58,13 @@ bool Board::solved()
 
 std::string Board::to_string()
 {
-    return "potato";
+    std::string s1 ="";
+
+    for(int x = 0; x < itiles.size(); x++)
+    {
+        s1 += std::to_string(x)+") " + itiles[x].to_string() + "\n"; 
+    }
+    return s1;
 
 }
 
