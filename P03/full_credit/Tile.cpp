@@ -1,54 +1,66 @@
-#include <iostream>
+
+#include "Tile.h"
+#include "Board.h"
 
 
-class Tile
+
+Tile::Tile(std::string word)
+    :_word(word),_matched(false)
 {
-    std::string _word;
-    bool _matched;
-    static int _width;
-    static std::string _blank;
-
-    public:
-        Tile(std::string word)
-        {
-            _word = word;
-
-        }
-
-        bool match(Tile& tile)
-        {
+    if(word.size() > _width)
+    {
+        _width = word.size();
 
 
-        }
+    }
+}
 
-        std::string word()
-        {
+bool Tile::match(Tile& tile)
+{
+    if(_word == tile.word())
+    {
+        _word = true;
 
-        }
-
-        bool matched()
-        {
-            
-
-        }
-
-        int width()
-        {
-
-        }
-
-        std::string to_string()
-        {
-            if(matched())
-                return _word;
-            else
-                return _blank;            
-
-        }
+        return true;
+    }
+    else 
+        return false;
 
 
 
+}
 
-};
+std::string Tile::word()
+{
+    return _word;
 
-int Tile:: _width = -1;
+}
+
+bool Tile::matched()
+{
+    return _matched;
+
+}
+
+int Tile::width()
+{
+    return _width;
+
+}
+
+std::string Tile::to_string()
+{
+    if(_matched == true)
+        return _word;
+    else
+        return _blank;            
+
+}
+
+
+
+
+
+
+
+
