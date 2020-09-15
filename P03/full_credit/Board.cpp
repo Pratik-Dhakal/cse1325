@@ -31,11 +31,11 @@ Board::Board(int tiles)
 
 std::string Board::attempt(int tile1, int tile2)
 {
-    std::string s1;
+    std::string s1 ="";
     if(itiles[tile1].match(itiles[tile2]))
-        s1 = itiles[tile1].word()+" MATCHES " + itiles[tile2].word(); 
+        s1 = itiles[tile1].word()+" MATCHES " + itiles[tile2].word() + "\n"; 
     else
-        s1 = itiles[tile1].word()+ " " + itiles[tile2].word();
+        s1 = itiles[tile1].word()+ " " + itiles[tile2].word() + "\n";
 
 
     return s1;
