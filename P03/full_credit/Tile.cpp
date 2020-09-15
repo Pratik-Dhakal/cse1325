@@ -1,6 +1,5 @@
 
 #include "Tile.h"
-#include "Board.h"
 
 
 
@@ -56,6 +55,9 @@ std::string Tile::to_string()
         return _blank;            
 
 }
+
+int Tile:: _width = -1;
+std::string Tile:: _blank = "-----";
 
 
 

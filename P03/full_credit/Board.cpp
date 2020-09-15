@@ -1,21 +1,30 @@
 
 #include "Board.h"
-#include "Tile.h"
 
+int myrandom (int i) { return std::rand()%i;}
 
 Board::Board(int tiles)
 {
+    
     std::srand(unsigned(std::time(0) ) );
 
     std::random_shuffle(words.begin(),words.end(),myrandom);
 
+    //std::cout<<tiles/2<<std::endl;
+
     for(int x = 0;x < tiles/2; x++)
     {
-        itiles[x] = words[x];
-        itiles[x+1] = words[x];
+        itiles.push_back(words[x]);
+        itiles.push_back(words[x]);
     }
 
-    std::random_shuffle(itiles.begin(),itiles.end(),myrandom);
+
+    std::random_shuffle(itiles.begin(),itiles.end(),myrandom);   
+
+    /*for(int x =0; x < tiles; x++)
+    {
+        std::cout<<itiles[x].word()<<std::endl;
+    }*/
 
 
 }

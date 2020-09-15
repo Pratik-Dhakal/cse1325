@@ -1,13 +1,13 @@
 #include <iostream>
+#include "Board.h"
 
 int main()
 {
-    int guess{0};
+    int num{};
+    std::cout<<"Enter the number of tiles you want ";
+    std::cin>>num;
+    Board b1(num);
 
-    for(int x = 0; x < 10; x++)
-    {
-        std::cout<<"Guess "<< guess <<", select 2 unmatched tiles: "<<std::endl;
-        guess++;
-    }
+
     return 0;
 }

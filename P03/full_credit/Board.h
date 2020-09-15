@@ -10,7 +10,7 @@
 class Tile;
 
 
-int myrandom (int i) { return std::rand()%i;}
+
 
 class Board
 {

@@ -27,6 +27,6 @@ class Tile
 
 };
 
-int Tile:: _width = -1;
+
 
 #endif
