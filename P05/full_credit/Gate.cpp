@@ -1,20 +1,9 @@
 #include <iostream>
+#include "Gate.h"
 
 
-class Gate{
 
-    protected:
-        typedef int Pin;
-        typedef bool Signal;
-        Signal _input1;
-        Signal _input2;
-
-    private:
-        Gate* _to_gate;
-        Pin _to_pin;
-
-    public:
-        Gate(){
+        Gate::Gate(){
             _input1 = false;
             _input2 = false;
             _to_gate = NULL;
@@ -22,13 +11,13 @@ class Gate{
 
         };
 
-        void connect(Gate& gate, Pin input_pin){ //This should be good
+        void Gate::connect(Gate& gate, Pin input_pin){ //This should be good
             _to_gate = &gate;
             _to_pin = input_pin;
 
         };
 
-        void input(Pin pin, Signal signal){
+        void Gate::input(Pin pin, Signal signal){
             if(pin == 1)
                 _input1 = signal;
             else
@@ -44,7 +33,7 @@ class Gate{
  
         };
 
-        Signal input(Pin pin){ //This should be good 
+        Gate::Signal Gate::input(Pin pin){ //This should be good 
             if(pin == 1)
                 return _input1;
             else
@@ -52,10 +41,9 @@ class Gate{
 
         };
 
-        virtual Signal output() = 0; //This is good
+        
     
 
-};
 
 class And: public Gate{ //This should be good
     public:

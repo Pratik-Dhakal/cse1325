@@ -1,5 +1,6 @@
 #ifndef AND_H
 #define AND_H
+#include <iostream>
 
 class Gate{
 
@@ -22,7 +23,7 @@ class Gate{
 
         Signal input(Pin pin);
 
-        virtual Signal output() = 0; //This is good
+        virtual Signal output(); //This is good
     
 
 };

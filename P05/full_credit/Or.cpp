@@ -1,7 +1,11 @@
 #include "Gate.h"
-class Or: public Gate{
+class Or: public Gate{ //This should be good
     public:
-        void output() override{
+        Signal output() override{
+            if(_input1 || _input2)
+                return true;
+            else
+                return false;
               
         };
 
