@@ -41,6 +41,7 @@ Gate::Signal Gate::input(Pin pin){ //This should be good
 
 };
 
+
         
     
 
