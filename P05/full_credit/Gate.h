@@ -2,13 +2,27 @@
 #define AND_H
 
 class Gate{
-    typedef int Pin;
-    typedef bool Signal;
 
-    virtual void output() = 0;
+    protected:
+        typedef int Pin;
+        typedef bool Signal;
+        Signal _input1;
+        Signal _input2;
 
+    private:
+        Gate* _to_gate;
+        Pin _to_pin;
 
+    public:
+        Gate();
 
+        void connect(Gate& gate, Pin input_pin);
+
+        void input(Pin pin, Signal signal);
+
+        Signal input(Pin pin);
+
+        virtual Signal output() = 0; //This is good
     
 
 };
