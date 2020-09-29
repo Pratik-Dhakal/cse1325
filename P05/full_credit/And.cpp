@@ -1,10 +1,8 @@
-#include "Gate.h"
-class And: public Gate{ //This should be good
-    public:
-        Signal output() override{
-            if(_input1 & _input2)
-                return true;
-            else
-                return false;
-        };
+#include "And.h"
+
+And::Signal And::output(){
+    if(_input1 & _input2)
+        return true;
+    else
+        return false;
 };

@@ -1,12 +1,10 @@
-#include "Gate.h"
-class Or: public Gate{ //This should be good
-    public:
-        Signal output() override{
-            if(_input1 || _input2)
-                return true;
-            else
-                return false;
-              
-        };
+#include "Or.h"
 
+Or::Signal Or::output(){
+    if(_input1 || _input2)
+        return true;
+    else
+        return false;
+        
 };
+
